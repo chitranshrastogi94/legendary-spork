@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bfmqcmdljcwa0"]
+
+[ext_resource type="Script" uid="uid://hfrxhlulela0" path="res://title_screen.gd" id="1_ak2if"]
+[ext_resource type="Texture2D" uid="uid://rapged82i1ec" path="res://icon.svg" id="1_v6p8y"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_osdde"]
+
+[node name="TitleScreen" type="Node2D" unique_id=70333308]
+position = Vector2(-760, 289)
+scale = Vector2(0.737944, 0.8058852)
+script = ExtResource("1_ak2if")
+
+[node name="Background" type="TextureRect" parent="." unique_id=165979742]
+material = SubResource("CanvasItemMaterial_osdde")
+offset_left = 855.0785
+offset_top = -435.54587
+offset_right = 3771.0786
+offset_bottom = 1285.4541
+scale = Vector2(0.65775913, 0.5930744)
+texture = ExtResource("1_v6p8y")
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=1210217511]
+clip_contents = false
+anchors_preset = -1
+anchor_left = -0.563
+anchor_top = 0.596
+anchor_right = -0.563
+anchor_bottom = 0.596
+offset_left = 1241.2865
+offset_top = -335.03534
+offset_right = 2125.4424
+offset_bottom = -82.57074
+scale = Vector2(1.3177203, 1.0510514)
+theme_override_constants/line_separation = 0
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 108
+text = "Where am I?"
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=909532843]
+offset_left = 1334.7896
+offset_top = -127.80976
+offset_right = 2126.1777
+offset_bottom = 372.26147
+scale = Vector2(1.1201491, 1.3102152)
+
+[node name="Start Button" type="Button" parent="VBoxContainer" unique_id=370296625]
+layout_mode = 2
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 80
+text = "Start"
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings Button" type="Button" parent="VBoxContainer" unique_id=1226872246]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 80
+text = "Settings"
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit Button" type="Button" parent="VBoxContainer" unique_id=581366929]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 80
+text = "Quit"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="VBoxContainer/Start Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit Button" to="." method="_on_quit_button_pressed_quit"]
